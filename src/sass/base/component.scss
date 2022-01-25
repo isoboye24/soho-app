@@ -45,7 +45,7 @@
           background-color: rgba(255, 255, 255, 0.09);
           padding: 0.8rem;
           font-size: 1.6rem;
-          transform: translateY(12rem);
+          transform: translate(-0.3rem, 12rem);
         }
       }
 
@@ -112,6 +112,8 @@
   .colors-sizes {
     overflow: hidden;
     z-index: 250;
+    display: none;
+    transition: 2s;
 
     padding: 1rem 0;
     background-color: #13111d;
@@ -162,19 +164,27 @@
       color: $color-text-primary;
 
       .sizes {
-        padding: 0.1rem;
+        padding: 0.5rem 0.7rem;
 
         .size {
-          width: 2rem;
-          height: 2rem;
-          border-radius: 0.2rem;
-          border: 0.1rem solid $color-text-primary;
+          font-size: 1.2rem;
+        }
 
-          &:hover {
-            border: 0.1rem solid $color-text-primary;
-          }
+        &:hover {
+          border: 0.1rem solid $color-text-primary;
+          border-radius: 1.2rem;
+          cursor: pointer;
         }
       }
     }
   }
+
+  &:hover .colors-sizes {
+    display: block;
+    transition: 2s;
+  }
+}
+
+.clickedColor {
+  background: linear-gradient(94.53deg, #d333f9 10.41%, #f9437e 99.34%);
 }

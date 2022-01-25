@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { sizes } from "./../data";
 
 const Sizes = () => {
+  const [changeColor, setChangeColor] = useState(false);
+
+  const handleColor = (change) => {
+    let body = document.querySelector(".sizes");
+    if (change === false) {
+      setChangeColor(change);
+      return;
+    }
+
+    body.filter((item) => item.classList.add("clickedColor"));
+    setChangeColor(change);
+  };
+
   return (
     <>
       <div className="arrow-next">
@@ -13,8 +26,12 @@ const Sizes = () => {
 
         return (
           <>
-            <div key={id} className="colors">
-              <span className="color">{size}</span>
+            <div
+              key={id}
+              className="sizes"
+              onClick={() => handleColor(changeColor)}
+            >
+              <span className="size">{size.toUpperCase()}</span>
             </div>
           </>
         );
