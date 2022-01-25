@@ -1,6 +1,11 @@
+$color-text-primary: #fff;
+
 // FONT
 $default-font-size: 1.6rem;
 
 // GRID
-$grid-width: 114rem;
-$gutter-vertical: 2.5rem; // 25px
+$grid-width: 170rem;
+$gutter-vertical: 3rem; // 30px
+$gutter-tab: 2rem; // 20px
+
+$transition: 2s all ease-in 1s;

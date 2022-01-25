@@ -1,33 +1,37 @@
 .container {
-  max-width: $grid-width;
-  margin: 0 auto;
-  padding: 0 5rem;
-
-  @include respond(tab-land) {
-    padding: 0 3rem;
-  }
-}
-
-.row {
-  max-width: $grid-width;
+  max-width: 120rem;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: repeat(4, minmax(20rem, 1fr));
-  grid-gap: $gutter-vertical;
+  // margin: 0 auto;
+  padding: 10rem 0;
 
   @include respond(tab-land) {
-    grid-template-columns: repeat(3, minmax(20rem, 1fr));
-    grid-gap: $gutter-vertical;
+    padding: 5rem 7rem;
   }
 
   @include respond(tab-port) {
-    grid-template-columns: repeat(2, minmax(20rem, 1fr));
-    grid-gap: $gutter-vertical;
+    padding: 5rem 20rem;
   }
 
   @include respond(phone) {
-    grid-template-columns: repeat(1, minmax(20rem, 1fr));
-    grid-gap: $gutter-vertical;
+    padding: 5rem 7rem;
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $gutter-vertical;
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gutter-tab;
+    padding: 0 auto;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    grid-gap: $gutter-tab;
+    padding: 0 auto;
   }
 }

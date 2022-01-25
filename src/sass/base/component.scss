@@ -1,0 +1,180 @@
+.single-product {
+  .frame {
+    width: 26rem;
+    position: relative;
+    color: $color-text-primary;
+
+    background: linear-gradient(
+      180deg,
+      rgba(19, 17, 29, 0) 13.69%,
+      rgba(19, 17, 29, 0.6) 47.05%,
+      #13111d 65.88%
+    );
+
+    .img {
+      min-width: 100%;
+      max-height: 22rem;
+    }
+
+    .frame-content {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0;
+
+      .cloth-price {
+        .cloth-name {
+          padding: 0.2rem 0.5rem;
+          font-size: 1.4rem;
+          color: $color-text-primary;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 0.1rem;
+          transform: translateY(13rem);
+        }
+
+        .price {
+          width: fit-content;
+          background-color: rgba(255, 255, 255, 0.09);
+          padding: 0.8rem;
+          font-size: 1.6rem;
+          transform: translateY(12rem);
+        }
+      }
+
+      .like-share-space {
+        .like-share {
+          transform: translate(-2rem, 1rem);
+          display: none;
+          justify-content: flex-end;
+          z-index: 101;
+          transition: 2s;
+          cursor: pointer;
+
+          & > :not(:last-child) {
+            margin-right: 0.7rem;
+          }
+
+          .like,
+          .share {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            background-color: rgba(19, 17, 29, 0.36);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .overlay {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 26rem;
+      height: 100%;
+      background-size: cover;
+      background-color: rgb(0, 0, 0);
+      z-index: 1000;
+      opacity: 0.5;
+
+      .out-of-stock {
+        font-weight: bold;
+        font-size: 2rem;
+        color: #f8f8f8;
+        text-align: center;
+        transform: translate(7rem, 9rem);
+        z-index: 20;
+        position: absolute;
+
+        @include respond(tab-port) {
+          transform: translate(5rem, 7rem);
+        }
+      }
+    }
+  }
+
+  &:hover .frame .frame-content .like-share {
+    display: flex;
+    transition: 2s;
+  }
+
+  .colors-sizes {
+    overflow: hidden;
+    z-index: 250;
+
+    padding: 1rem 0;
+    background-color: #13111d;
+
+    .color-section {
+      padding: 0.2rem;
+      display: flex;
+      justify-content: space-between;
+      color: $color-text-primary;
+
+      .colors {
+        padding: 0.1rem;
+
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+
+        .color {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+        }
+
+        &:hover {
+          transform: scale(0.8);
+          border: 0.2rem solid #ffffff;
+        }
+      }
+    }
+
+    .arrow {
+      &-next {
+      }
+      &-prev {
+      }
+
+      .fas {
+        font-size: 1.5rem;
+        color: $color-text-primary;
+      }
+    }
+
+    .sizes-section {
+      margin-top: 1rem;
+      padding: 0.2rem;
+      display: flex;
+      justify-content: space-between;
+      color: $color-text-primary;
+
+      .sizes {
+        padding: 0.1rem;
+
+        .size {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 0.2rem;
+          border: 0.1rem solid $color-text-primary;
+
+          &:hover {
+            border: 0.1rem solid $color-text-primary;
+          }
+        }
+      }
+    }
+  }
+}
